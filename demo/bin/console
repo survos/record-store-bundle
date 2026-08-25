@@ -1,0 +1,47 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+use Survos\RecordStoreBundle\Demo\DemoKernel;
+use Symfony\Bundle\FrameworkBundle\Console\Application;
+
+$autoloaders = [
+    dirname(__DIR__, 2).'/vendor/autoload.php',
+    dirname(__DIR__, 4).'/vendor/autoload.php',
+    dirname(__DIR__, 5).'/vendor/autoload.php',
+];
+
+foreach ($autoloaders as $autoloader) {
+    if (is_file($autoloader)) {
+        require $autoloader;
+        break;
+    }
+}
+
+if (!class_exists(Application::class)) {
+    fwrite(STDERR, "Run Composer install in the package or mono checkout first.\n");
+
+    exit(1);
+}
+
+if (!class_exists(Survos\RecordStoreBundle\SurvosRecordStoreBundle::class)) {
+    $packageSource = dirname(__DIR__, 2).'/src/';
+    spl_autoload_register(static function (string $class) use ($packageSource): void {
+        $prefix = 'Survos\\RecordStoreBundle\\';
+        if (!str_starts_with($class, $prefix)) {
+            return;
+        }
+
+        $file = $packageSource.str_replace('\\', '/', substr($class, strlen($prefix))).'.php';
+        if (is_file($file)) {
+            require $file;
+        }
+    });
+}
+
+require dirname(__DIR__).'/src/DemoKernel.php';
+
+$kernel = new DemoKernel($_SERVER['APP_ENV'] ?? 'dev', true);
+$application = new Application($kernel);
+$application->run();

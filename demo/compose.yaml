@@ -1,0 +1,25 @@
+services:
+    grist:
+        image: gristlabs/grist-oss:latest
+        restart: unless-stopped
+        environment:
+            GRIST_SESSION_SECRET: record-store-demo-session-secret-change-before-any-real-deployment
+            GRIST_BOOT_KEY: record-store-demo-boot-key
+            GRIST_DEFAULT_EMAIL: demo@example.test
+            GRIST_SINGLE_ORG: record-store-demo
+            APP_HOME_URL: 'http://localhost:${GRIST_DEMO_PORT:-8485}'
+            GRIST_SANDBOX_FLAVOR: gvisor
+            GRIST_IN_SERVICE: 'true'
+        ports:
+            - '127.0.0.1:${GRIST_DEMO_PORT:-8485}:8484'
+        volumes:
+            - grist_data:/persist
+        healthcheck:
+            test: ["CMD-SHELL", "node -e \"require('http').get('http://localhost:8484/status',r=>process.exit(r.statusCode===200?0:1)).on('error',()=>process.exit(1))\""]
+            interval: 10s
+            timeout: 5s
+            retries: 12
+            start_period: 30s
+
+volumes:
+    grist_data:

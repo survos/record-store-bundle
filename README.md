@@ -41,3 +41,11 @@ bin/console record-store:query contacts.contacts --filter='{"status":["Active"]}
 The generic query surface intentionally supports only equality-list filters, sorting, limits, and provider-supported offsets. Use `QuickbaseClientInterface` for native Quickbase expressions and `GristClientInterface` for Grist-native operations such as SQL.
 
 Schema mutation, declarative blueprints, Contacts integration, and admin UI are deliberately deferred until the two-adapter contract is proven.
+
+## Local Grist demo
+
+The `demo/` directory contains an isolated Grist Compose stack and a minimal Symfony console that
+boots this bundle directly from the mono checkout or a standalone package checkout. It is intended
+for adapter development, not deployment.
+
+See `demo/README.md` for setup and the schema/query commands.
