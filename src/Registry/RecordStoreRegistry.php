@@ -95,6 +95,11 @@ final class RecordStoreRegistry
         return $this->adapter($reference->connection);
     }
 
+    public function connectionConfiguration(string $name): ConnectionConfiguration
+    {
+        return $this->connection($name);
+    }
+
     private function connection(string $name): ConnectionConfiguration
     {
         $configuration = $this->connections[$name]
