@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Survos\RecordStore\Command;
+namespace Survos\RecordStoreBundle\Command;
 
 use Survos\RecordStore\Model\RecordQuery;
 use Survos\RecordStore\Model\RecordSort;

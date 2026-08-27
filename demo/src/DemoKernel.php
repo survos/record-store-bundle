@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Survos\RecordStore\Demo;
 
 use Survos\Kit\SurvosKitBundle;
-use Survos\RecordStore\SurvosRecordStoreBundle;
+use Survos\RecordStoreBundle\SurvosRecordStoreBundle;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

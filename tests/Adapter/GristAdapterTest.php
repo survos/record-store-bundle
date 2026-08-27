@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Survos\RecordStore\Tests\Adapter;
+namespace Survos\RecordStoreBundle\Tests\Adapter;
 
 use PHPUnit\Framework\TestCase;
 use Survos\Grist\Adapter\GristAdapter;

@@ -6,7 +6,6 @@ namespace Survos\RecordStoreBundle;
 
 use Survos\Kit\AbstractSurvosBundle;
 use Survos\Kit\SurvosKitBundle;
-use Survos\Grist\Adapter\GristAdapterFactory;
 use Survos\RecordStore\Contract\AdapterFactoryInterface;
 use Survos\RecordStore\Registry\RecordStoreRegistry;
 use Symfony\Component\Config\Definition\Configurator\DefinitionConfigurator;
@@ -77,9 +76,6 @@ final class SurvosRecordStoreBundle extends AbstractSurvosBundle
             ->addTag('survos_record_store.adapter_factory');
 
         $services = $container->services()->defaults()->autowire()->autoconfigure();
-        $services->set(GristAdapterFactory::class)
-            ->arg('$http', service('http_client'))
-            ->tag('survos_record_store.adapter_factory');
         $services->set(RecordStoreRegistry::class)
             ->arg('$connections', $config['connections'])
             ->arg('$applications', $config['applications'])

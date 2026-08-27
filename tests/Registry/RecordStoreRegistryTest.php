@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Survos\RecordStore\Tests\Registry;
+namespace Survos\RecordStoreBundle\Tests\Registry;
 
 use PHPUnit\Framework\TestCase;
 use Survos\RecordStore\Contract\AdapterFactoryInterface;

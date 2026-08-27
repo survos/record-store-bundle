@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Survos\RecordStore\Tests;
+namespace Survos\RecordStoreBundle\Tests;
 
 use Survos\RecordStore\Registry\RecordStoreRegistry;
 use Symfony\Component\Console\CommandLoader\ContainerCommandLoader;

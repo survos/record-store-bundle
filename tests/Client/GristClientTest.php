@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Survos\RecordStore\Tests\Client;
+namespace Survos\RecordStoreBundle\Tests\Client;
 
 use PHPUnit\Framework\TestCase;
 use Survos\Grist\Client\GristClient;
