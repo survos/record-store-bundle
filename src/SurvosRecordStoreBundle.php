@@ -6,9 +6,9 @@ namespace Survos\RecordStoreBundle;
 
 use Survos\Kit\AbstractSurvosBundle;
 use Survos\Kit\SurvosKitBundle;
-use Survos\RecordStoreBundle\Adapter\Grist\GristAdapterFactory;
-use Survos\RecordStoreBundle\Contract\AdapterFactoryInterface;
-use Survos\RecordStoreBundle\Registry\RecordStoreRegistry;
+use Survos\Grist\Adapter\GristAdapterFactory;
+use Survos\RecordStore\Contract\AdapterFactoryInterface;
+use Survos\RecordStore\Registry\RecordStoreRegistry;
 use Symfony\Component\Config\Definition\Configurator\DefinitionConfigurator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Kernel\RequiredBundle;

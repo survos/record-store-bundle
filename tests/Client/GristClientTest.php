@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Survos\RecordStoreBundle\Tests\Client;
+namespace Survos\RecordStore\Tests\Client;
 
 use PHPUnit\Framework\TestCase;
-use Survos\RecordStoreBundle\Adapter\Grist\GristClient;
+use Survos\Grist\Client\GristClient;
 use Symfony\Component\HttpClient\MockHttpClient;
 use Symfony\Component\HttpClient\Response\MockResponse;
 

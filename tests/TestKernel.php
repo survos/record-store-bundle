@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Survos\RecordStoreBundle\Tests;
+namespace Survos\RecordStore\Tests;
 
 use Survos\Kit\SurvosKitBundle;
-use Survos\RecordStoreBundle\SurvosRecordStoreBundle;
+use Survos\RecordStore\SurvosRecordStoreBundle;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Survos\RecordStoreBundle\Command;
+namespace Survos\RecordStore\Command;
 
-use Survos\RecordStoreBundle\Model\RecordQuery;
-use Survos\RecordStoreBundle\Model\RecordSort;
-use Survos\RecordStoreBundle\Model\SortDirection;
-use Survos\RecordStoreBundle\Registry\RecordStoreRegistry;
+use Survos\RecordStore\Model\RecordQuery;
+use Survos\RecordStore\Model\RecordSort;
+use Survos\RecordStore\Model\SortDirection;
+use Survos\RecordStore\Registry\RecordStoreRegistry;
 use Symfony\Component\Console\Attribute\Argument;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Attribute\Option;

@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Survos\RecordStoreBundle\Tests\Registry;
+namespace Survos\RecordStore\Tests\Registry;
 
 use PHPUnit\Framework\TestCase;
-use Survos\RecordStoreBundle\Contract\AdapterFactoryInterface;
-use Survos\RecordStoreBundle\Contract\RecordStoreAdapterInterface;
-use Survos\RecordStoreBundle\Exception\RecordStoreConfigurationException;
-use Survos\RecordStoreBundle\Model\ConnectionConfiguration;
-use Survos\RecordStoreBundle\Registry\RecordStoreRegistry;
+use Survos\RecordStore\Contract\AdapterFactoryInterface;
+use Survos\RecordStore\Contract\RecordStoreAdapterInterface;
+use Survos\RecordStore\Exception\RecordStoreConfigurationException;
+use Survos\RecordStore\Model\ConnectionConfiguration;
+use Survos\RecordStore\Registry\RecordStoreRegistry;
 
 final class RecordStoreRegistryTest extends TestCase
 {

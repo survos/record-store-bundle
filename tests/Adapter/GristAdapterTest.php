@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Survos\RecordStoreBundle\Tests\Adapter;
+namespace Survos\RecordStore\Tests\Adapter;
 
 use PHPUnit\Framework\TestCase;
-use Survos\RecordStoreBundle\Adapter\Grist\GristAdapter;
-use Survos\RecordStoreBundle\Contract\GristClientInterface;
-use Survos\RecordStoreBundle\Exception\UnsupportedRecordStoreOperation;
-use Survos\RecordStoreBundle\Model\ApplicationReference;
-use Survos\RecordStoreBundle\Model\FieldType;
-use Survos\RecordStoreBundle\Model\Record;
-use Survos\RecordStoreBundle\Model\RecordQuery;
-use Survos\RecordStoreBundle\Model\RecordSort;
-use Survos\RecordStoreBundle\Model\SortDirection;
-use Survos\RecordStoreBundle\Model\TableReference;
-use Survos\RecordStoreBundle\Model\UpsertRequest;
+use Survos\Grist\Adapter\GristAdapter;
+use Survos\Grist\Contract\GristClientInterface;
+use Survos\RecordStore\Exception\UnsupportedRecordStoreOperation;
+use Survos\RecordStore\Model\ApplicationReference;
+use Survos\RecordStore\Model\FieldType;
+use Survos\RecordStore\Model\Record;
+use Survos\RecordStore\Model\RecordQuery;
+use Survos\RecordStore\Model\RecordSort;
+use Survos\RecordStore\Model\SortDirection;
+use Survos\RecordStore\Model\TableReference;
+use Survos\RecordStore\Model\UpsertRequest;
 
 final class GristAdapterTest extends TestCase
 {

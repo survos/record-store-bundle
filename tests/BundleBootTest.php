@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Survos\RecordStoreBundle\Tests;
+namespace Survos\RecordStore\Tests;
 
-use Survos\RecordStoreBundle\Registry\RecordStoreRegistry;
+use Survos\RecordStore\Registry\RecordStoreRegistry;
 use Symfony\Component\Console\CommandLoader\ContainerCommandLoader;
 
 final class BundleBootTest extends KernelTestCase
