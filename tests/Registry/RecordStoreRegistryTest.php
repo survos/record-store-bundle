@@ -73,4 +73,30 @@ final class RecordStoreRegistryTest extends TestCase
         $this->expectExceptionMessage('Provider field mapping for "email"');
         $registry->table('contacts.people');
     }
+
+    /**
+     * A connection with no application pointing at it is still findable.
+     *
+     * That is the case for a tool that *creates* the remote resource: there is nothing to
+     * configure an application against yet, so deriving the connection from the applications
+     * finds nothing.
+     */
+    public function testFindsConnectionsByDriverWithoutAnApplication(): void
+    {
+        $registry = new RecordStoreRegistry(
+            [
+                'source' => ['driver' => 'quickbase'],
+                'target' => ['driver' => 'grist'],
+                'archive' => ['driver' => 'Grist'],
+            ],
+            [],
+            [],
+        );
+
+        self::assertSame(['source', 'target', 'archive'], $registry->connectionNames());
+        self::assertSame(['target', 'archive'], $registry->connectionsByDriver('grist'));
+        self::assertSame(['source'], $registry->connectionsByDriver('QUICKBASE'));
+        self::assertSame([], $registry->connectionsByDriver('baserow'));
+        self::assertSame([], $registry->applicationNames());
+    }
 }
